@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ShopZone - Online Shopping</title>
+
+    <meta
+        name="description"
+        content="Shop electronics, fashion, home products, beauty and more."
+    >
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="top-header">
+
+    <div class="nav-main">
+
+        <a href="#" class="logo">
+            <span class="logo-main">Shop<span>Zone</span></span>
+            <span class="logo-smile">Everything you need</span>
+        </a>
+
+        <div class="location">
+            <span class="location-icon">📍</span>
+            <div>
+                <small>Deliver to</small>
+                <strong>India</strong>
+            </div>
+        </div>
+
+        <div class="search-container">
+
+            <select id="categorySelect">
+                <option value="all">All</option>
+                <option value="electronics">Electronics</option>
+                <option value="fashion">Fashion</option>
+                <option value="home">Home</option>
+                <option value="beauty">Beauty</option>
+                <option value="gaming">Gaming</option>
+            </select>
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search ShopZone"
+            >
+
+            <button id="searchButton" aria-label="Search">
+                🔍
+            </button>
+
+        </div>
+
+        <div class="nav-item language">
+            <span>🌐 EN</span>
+        </div>
+
+        <div class="nav-item account">
+            <small>Hello, sign in</small>
+            <strong>Account & Lists ▾</strong>
+        </div>
+
+        <div class="nav-item orders">
+            <small>Returns</small>
+            <strong>& Orders</strong>
+        </div>
+
+        <button class="cart" id="cartButton">
+            🛒
+            <span class="cart-count" id="cartCount">0</span>
+            <strong>Cart</strong>
+        </button>
+
+    </div>
+
+    <!-- SECOND NAV -->
+
+    <nav class="secondary-nav">
+
+        <button class="menu-button">
+            ☰ <strong>All</strong>
+        </button>
+
+        <a href="#deals">Today's Deals</a>
+        <a href="#products">Best Sellers</a>
+        <a href="#categories">Categories</a>
+        <a href="#products">Electronics</a>
+        <a href="#products">Fashion</a>
+        <a href="#products">Home</a>
+        <a href="#footer">Customer Service</a>
+
+        <div class="nav-highlight">
+            🚀 Fast Delivery Available
+        </div>
+
+    </nav>
+
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<main>
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <span class="hero-tag">LIMITED TIME OFFER</span>
+
+        <h1>
+            Big Deals.<br>
+            Bigger Savings.
+        </h1>
+
+        <p>
+            Discover amazing products at prices you'll love.
+            Shop electronics, fashion, home essentials and more.
+        </p>
+
+        <div class="hero-buttons">
+
+            <button class="primary-button" onclick="scrollToProducts()">
+                Shop Now →
+            </button>
+
+            <button class="secondary-button" onclick="scrollToDeals()">
+                View Deals
+            </button>
+
+        </div>
+
+    </div>
+
+    <div class="hero-product">
+
+        <div class="floating-card card-one">
+            <span>🔥</span>
+            <div>
+                <strong>Hot Deals</strong>
+                <small>Up to 70% OFF</small>
+            </div>
+        </div>
+
+        <div class="product-circle">
+            <div class="product-device">
+                📱
+            </div>
+        </div>
+
+        <div class="floating-card card-two">
+            <span>⭐</span>
+            <div>
+                <strong>Top Rated</strong>
+                <small>4.8 / 5</small>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= QUICK CATEGORIES ================= -->
+
+<section class="section" id="categories">
+
+    <div class="section-heading">
+
+        <div>
+            <span class="eyebrow">EXPLORE</span>
+            <h2>Shop by Category</h2>
+        </div>
+
+        <a href="#products">See all categories →</a>
+
+    </div>
+
+    <div class="category-grid">
+
+        <article class="category-card electronics-category">
+            <div class="category-icon">💻</div>
+            <h3>Electronics</h3>
+            <p>Latest gadgets & devices</p>
+            <button onclick="filterCategory('electronics')">
+                Shop now →
+            </button>
+        </article>
+
+        <article class="category-card fashion-category">
+            <div class="category-icon">👕</div>
+            <h3>Fashion</h3>
+            <p>Style for every occasion</p>
+            <button onclick="filterCategory('fashion')">
+                Shop now →
+            </button>
+        </article>
+
+        <article class="category-card home-category">
+            <div class="category-icon">🏠</div>
+            <h3>Home</h3>
+            <p>Make your home beautiful</p>
+            <button onclick="filterCategory('home')">
+                Shop now →
+            </button>
+        </article>
+
+        <article class="category-card beauty-category">
+            <div class="category-icon">✨</div>
+            <h3>Beauty</h3>
+            <p>Beauty & personal care</p>
+            <button onclick="filterCategory('beauty')">
+                Shop now →
+            </button>
+        </article>
+
+        <article class="category-card gaming-category">
+            <div class="category-icon">🎮</div>
+            <h3>Gaming</h3>
+            <p>Level up your experience</p>
+            <button onclick="filterCategory('gaming')">
+                Shop now →
+            </button>
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- ================= DEAL BANNER ================= -->
+
+<section class="deal-banner" id="deals">
+
+    <div>
+
+        <span class="deal-label">MEGA DEAL</span>
+
+        <h2>Up to 70% OFF</h2>
+
+        <p>
+            Limited-time offers on thousands of products.
+        </p>
+
+    </div>
+
+    <div class="deal-timer">
+
+        <span>Deal ends in</span>
+
+        <div class="timer-boxes">
+
+            <div>
+                <strong id="hours">08</strong>
+                <small>Hours</small>
+            </div>
+
+            <b>:</b>
+
+            <div>
+                <strong id="minutes">42</strong>
+                <small>Minutes</small>
+            </div>
+
+            <b>:</b>
+
+            <div>
+                <strong id="seconds">19</strong>
+                <small>Seconds</small>
+            </div>
+
+        </div>
+
+    </div>
+
+    <button onclick="scrollToProducts()">
+        Shop Deals →
+    </button>
+
+</section>
+
+
+<!-- ================= PRODUCTS ================= -->
+
+<section class="section" id="products">
+
+    <div class="section-heading">
+
+        <div>
+            <span class="eyebrow">TRENDING NOW</span>
+            <h2>Popular Products</h2>
+        </div>
+
+        <div class="product-filter">
+
+            <button class="filter active" data-filter="all">
+                All
+            </button>
+
+            <button class="filter" data-filter="electronics">
+                Electronics
+            </button>
+
+            <button class="filter" data-filter="fashion">
+                Fashion
+            </button>
+
+            <button class="filter" data-filter="home">
+                Home
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <div class="product-grid" id="productGrid">
+
+
+        <!-- PRODUCT 1 -->
+
+        <article
+            class="product-card"
+            data-category="electronics"
+        >
+
+            <div class="product-image purple">
+                <span class="discount">-32%</span>
+                <div class="product-emoji">🎧</div>
+            </div>
+
+            <div class="product-info">
+
+                <span class="product-category">
+                    Electronics
+                </span>
+
+                <h3>
+                    Wireless Noise Cancelling Headphones
+                </h3>
+
+                <div class="rating">
+                    ⭐⭐⭐⭐⭐
+                    <span>2,341</span>
+                </div>
+
+                <div class="price">
+                    <strong>₹2,999</strong>
+                    <del>₹4,399</del>
+                </div>
+
+                <p class="delivery">
+                    FREE delivery tomorrow
+                </p>
+
+                <button
+                    class="add-cart"
+                    onclick="addToCart('Wireless Headphones')"
+                >
+                    Add to Cart
+                </button>
+
+            </div>
+
+        </article>
+
+
+        <!-- PRODUCT 2 -->
+
+        <article
+            class="product-card"
+            data-category="electronics"
+        >
+
+            <div class="product-image blue">
+                <span class="discount">-24%</span>
+                <div class="product-emoji">⌚</div>
+            </div>
+
+            <div class="product-info">
+
+                <span class="product-category">
+                    Electronics
+                </span>
+
+                <h3>
+                    Smart Watch Pro with AMOLED Display
+                </h3>
+
+                <div class="rating">
+                    ⭐⭐⭐⭐⭐
+                    <span>1,824</span>
+                </div>
+
+                <div class="price">
+                    <strong>₹3,799</strong>
+                    <del>₹4,999</del>
+                </div>
+
+                <p class="delivery">
+                    FREE delivery tomorrow
+                </p>
+
+                <button
+                    class="add-cart"
+                    onclick="addToCart('Smart Watch Pro')"
+                >
+                    Add to Cart
+                </button>
+
+            </div>
+
+        </article>
+
+
+        <!-- PRODUCT 3 -->
+
+        <article
+            class="product-card"
+            data-category="electronics"
+        >
+
+            <div class="product-image orange">
+                <span class="discount">-18%</span>
+                <div class="product-emoji">📱</div>
+            </div>
+
+            <div class="product-info">
+
+                <span class="product-category">
+                    Electronics
+                </span>
+
+                <h3>
+                    Pro Smartphone 5G 256GB
+                </h3>
+
+                <div class="rating">
+                    ⭐⭐⭐⭐⭐
+                    <span>4,921</span>
+                </div>
+
+                <div class="price">
+                    <strong>₹29,999</strong>
+                    <del>₹36,499</del>
+                </div>
+
+                <p class="delivery">
+                    FREE delivery tomorrow
+                </p>
+
+                <button
+                    class="add-cart"
+                    onclick="addToCart('Pro Smartphone')"
+                >
+                    Add to Cart
+                </button>
+
+            </div>
+
+        </article>
+
+
+        <!-- PRODUCT 4 -->
+
+        <article
+            class="product-card"
+            data-category="fashion"
+        >
+
+            <div class="product-image green">
+                <span class="discount">-41%</span>
+                <div class="product-emoji">👟</div>
+            </div>
+
+            <div class="product-info">
+
+                <span class="product-category">
+                    Fashion
+                </span>
+
+                <h3>
+                    Premium Running Shoes
+                </h3>
+
+                <div class="rating">
+                    ⭐⭐⭐⭐☆
+                    <span>984</span>
+                </div>
+
+                <div class="price">
+                    <strong>₹1,799</strong>
+                    <del>₹3,049</del>
+                </div>
+
+                <p class="delivery">
+                    FREE delivery tomorrow
+                </p>
+
+                <button
+                    class="add-cart"
+                    onclick="addToCart('Running Shoes')"
+                >
+                    Add to Cart
+                </button>
+
+            </div>
+
+        </article>
+
+
+        <!-- PRODUCT 5 -->
+
+        <article
+            class="product-card"
+            data-category="home"
+        >
+
+            <div class="product-image pink">
+                <span class="discount">-35%</span>
+                <div class="product-emoji">☕</div>
+            </div>
+
+            <div class="product-info">
+
+                <span class="product-category">
+                    Home
+                </span>
+
+                <h3>
+                    Smart Coffee Maker
+                </h3>
+
+                <div class="rating">
+                    ⭐⭐⭐⭐⭐
+                    <span>743</span>
+                </div>
+
+                <div class="price">
+                    <strong>₹4,299</strong>
+                    <del>₹6,599</del>
+                </div>
+
+                <p class="delivery">
+                    FREE delivery tomorrow
+                </p>
+
+                <button
+                    class="add-cart"
+                    onclick="addToCart('Smart Coffee Maker')"
+                >
+                    Add to Cart
+                </button>
+
+            </div>
+
+        </article>
+
+
+        <!-- PRODUCT 6 -->
+
+        <article
+            class="product-card"
+            data-category="home"
+        >
+
+            <div class="product-image teal">
+                <span class="discount">-28%</span>
+                <div class="product-emoji">🪑</div>
+            </div>
+
+            <div class="product-info">
+
+                <span class="product-category">
+                    Home
+                </span>
+
+                <h3>
+                    Ergonomic Office Chair
+                </h3>
+
+                <div class="rating">
+                    ⭐⭐⭐⭐⭐
+                    <span>2,105</span>
+                </div>
+
+                <div class="price">
+                    <strong>₹7,499</strong>
+                    <del>₹10,399</del>
+                </div>
+
+                <p class="delivery">
+                    FREE delivery tomorrow
+                </p>
+
+                <button
+                    class="add-cart"
+                    onclick="addToCart('Office Chair')"
+                >
+                    Add to Cart
+                </button>
+
+            </div>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FEATURES ================= -->
+
+<section class="features">
+
+    <div class="feature">
+
+        <div class="feature-icon">🚚</div>
+
+        <div>
+            <h3>Fast Delivery</h3>
+            <p>Get your orders delivered quickly.</p>
+        </div>
+
+    </div>
+
+    <div class="feature">
+
+        <div class="feature-icon">🔒</div>
+
+        <div>
+            <h3>Secure Payments</h3>
+            <p>Your payment information is protected.</p>
+        </div>
+
+    </div>
+
+    <div class="feature">
+
+        <div class="feature-icon">↩️</div>
+
+        <div>
+            <h3>Easy Returns</h3>
+            <p>Simple and hassle-free returns.</p>
+        </div>
+
+    </div>
+
+    <div class="feature">
+
+        <div class="feature-icon">🎧</div>
+
+        <div>
+            <h3>24/7 Support</h3>
+            <p>We're here whenever you need us.</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= NEWSLETTER ================= -->
+
+<section class="newsletter">
+
+    <div>
+
+        <span class="eyebrow">STAY UPDATED</span>
+
+        <h2>Get exclusive deals in your inbox</h2>
+
+        <p>
+            Subscribe to receive special offers and product updates.
+        </p>
+
+    </div>
+
+    <form id="newsletterForm">
+
+        <input
+            type="email"
+            placeholder="Enter your email address"
+            required
+        >
+
+        <button type="submit">
+            Subscribe
+        </button>
+
+    </form>
+
+</section>
+
+</main>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer id="footer">
+
+    <div class="back-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+        ↑ Back to top
+    </div>
+
+    <div class="footer-main">
+
+        <div class="footer-column">
+
+            <h3>ShopZone</h3>
+
+            <p>
+                Your trusted destination for
+                quality products and great prices.
+            </p>
+
+            <div class="socials">
+                <span>f</span>
+                <span>𝕏</span>
+                <span>◎</span>
+                <span>in</span>
+            </div>
+
+        </div>
+
+        <div class="footer-column">
+
+            <h4>Get to Know Us</h4>
+
+            <a href="#">About Us</a>
+            <a href="#">Careers</a>
+            <a href="#">Press Releases</a>
+            <a href="#">Our Technology</a>
+
+        </div>
+
+        <div class="footer-column">
+
+            <h4>Make Money With Us</h4>
+
+            <a href="#">Sell on ShopZone</a>
+            <a href="#">Affiliate Program</a>
+            <a href="#">Advertise Products</a>
+            <a href="#">Become a Partner</a>
+
+        </div>
+
+        <div class="footer-column">
+
+            <h4>Customer Service</h4>
+
+            <a href="#">Your Account</a>
+            <a href="#">Order Tracking</a>
+            <a href="#">Returns</a>
+            <a href="#">Help Center</a>
+
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+
+        <div class="footer-logo">
+            Shop<span>Zone</span>
+        </div>
+
+        <div>
+            © 2026 ShopZone. All rights reserved.
+        </div>
+
+        <div class="legal-links">
+            <a href="#">Privacy</a>
+            <a href="#">Terms</a>
+            <a href="#">Cookies</a>
+        </div>
+
+    </div>
+
+</footer>
+
+
+<!-- TOAST -->
+
+<div id="toast" class="toast">
+    Added to cart!
+</div>
+
+
+<script src="js/script.js"></script>
+
+</body>
+</html>
