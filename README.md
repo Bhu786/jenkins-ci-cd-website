@@ -210,7 +210,7 @@ ECR
 
 For now, do the four commands above manually. Once you confirm **`docker push` succeeds and image `1.0` appears in ECR**, we'll move to the next major part: **creating the Jenkins server on EC2 and configuring it properly for CI/CD**.
 ==============================
-## step 6: create ec2 for jenkin servere
+## step 6: create ec2 for jenkin servere  (t3.medium below this not work)
        a : there we install jenkins
        Perfect. Your EC2 is **Amazon Linux 2023**, and it's currently clean:
 
